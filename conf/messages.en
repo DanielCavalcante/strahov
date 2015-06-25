@@ -1,0 +1,20 @@
+#Mensagens
+menu.home=Strahov
+menu.livros=Books
+menu.sobre=About
+menu.emprestimos=Empréstimos
+menu.usuario=User
+#Button
+button.back=Back
+button.save=Save
+button.new=New
+#Livros
+book.isbn=ISBN
+book.age=Age
+book.title=Title
+book.author=Author
+book.editora=Editora
+book.genero=Gênero
+book.observacao=Observação
+book.lido=Read
+book.new=New book

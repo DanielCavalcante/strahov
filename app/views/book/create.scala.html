@@ -1,0 +1,26 @@
+@(bookForm:Form[Book])
+@implicitField = @{ FieldConstructor(campo.f) }
+@import helper._
+@main(Messages("book.new")) {
+<html>
+	<body>
+		@helper.form(routes.Books.save()) {
+		<form class="form-horizontal">
+			<a href="/books" class="btn btn-default">@Messages("button.back")</a>
+			<fieldset>
+				<legend>@Messages("book.new")</legend>
+				@helper.inputText(bookForm("Isbn"))
+				@helper.inputText(bookForm("Ano"), '_label -> Messages("book.age"))
+				@helper.inputText(bookForm("Titulo"), '_label -> Messages("book.title"))
+				@helper.inputText(bookForm("Autor") , '_label -> Messages("book.author"))
+				@helper.inputText(bookForm("Editora"))
+				@helper.inputText(bookForm("Genero"), '_label -> Messages("book.genero"))
+				@helper.inputText(bookForm("Observacao"), '_label -> Messages("book.observacao"))
+				@helper.checkbox(bookForm("Lido"))
+			</fieldset>
+			<a onclick="submit" class="btn btn-default">@Messages("button.save")</a>			
+		</form>
+		}
+	</body>
+</html>
+}

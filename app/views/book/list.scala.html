@@ -1,0 +1,40 @@
+@(books:List[models.Book])
+@if(flash.containsKey("sucess")) {
+	<div class="alert alert-sucess">
+		@flash.get("sucess")
+	</div>
+}
+@if(flash.containsKey("error")) {
+	<div class="alert alert-danger">
+		@flash.get("error")
+	</div>
+}
+@main("STRAHOV - books") {
+<a href="@routes.Books.create()" class="btn btn-primary">@Messages("button.new")</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>@Messages("book.lido")</th>
+			<th>@Messages("book.title")</th>
+			<th>@Messages("book.age")</th>
+			<th>@Messages("book.editora")</th>
+			<th>@Messages("book.genero")</th>
+			<th>@Messages("book.isbn")</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+	@for(book <- books) {
+		<tr>
+			<td>@if(book.isLido()) { Sim } else { Não } </td>
+			<td><a href="@routes.Books.edit(book.getId())">@book.getTitulo()</a></td>
+			<td>@book.getAutor()</td>
+			<td>@book.getEditora()</td>
+			<td>@book.getGenero()</td>
+			<td>@book.getIsbn()</td>
+			<td><a href="@routes.Books.remove(book.getId())">X</a></td>
+		</tr>
+	}
+	</tbody>
+</table>
+}

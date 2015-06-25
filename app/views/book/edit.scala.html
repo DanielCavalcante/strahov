@@ -1,0 +1,27 @@
+@(book: models.Book)
+@main("STRAHOV - Edit book") {
+    <form action="@routes.Books.save()" method="POST" class="form-horizontal">
+    	<a href="/books" class="btn btn-default">@Messages("button.back")</a>
+    	<div class="form-group">
+    		<div class="col-sm-4">
+				<label class="control-label">@Messages("book.lido")</label>
+				<input type="checkbox" id="lido" name="lido" value="@book.isLido()" class="checkbox" />
+				<label class="control-label">@Messages("book.isbn")</label>
+				<input type="text" id="isbn" name="isbn" value="@book.getIsbn()" class="form-control" />
+				<label class="control-label">@Messages("book.age")</label>
+				<input type="text" id="ano" name="ano" value="@book.getAno()" class="form-control" />
+				<label class="control-label">@Messages("book.title")</label>
+				<input type="text" id="titulo" name="titulo" value="@book.getTitulo()" class="form-control" />
+				<label class="control-label">@Messages("book.author")</label>
+				<input type="text" id="autor" name="autor" value="@book.getAutor()" class="form-control" />
+				<label class="control-label">@Messages("book.editora")</label>
+				<input type="text" id="editora" name="editora" value="@book.getEditora()" class="form-control" />
+				<label class="control-label">@Messages("book.genero")</label>
+				<input type="text" id="genero" name="genero" value="@book.getGenero()" class="form-control" />
+				<label class="control-label">@Messages("book.observacao")</label>
+				<input name="observacao" id="observacao" value="@book.getObservacao()" class="form-control" />
+				<input type="submit" value="Cadastrar" class="btn btn-primary">
+	    	</div>
+    	</div>
+	</form>
+}

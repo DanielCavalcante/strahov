@@ -1,0 +1,27 @@
+@(title: String)(content: Html)
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>@title</title>
+		<link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/bootstrap-theme.min.css")'/>        
+		<link rel="stylesheet" media="screen" href='@routes.Assets.at("stylesheets/bootstrap.min.css")'/>        
+    	<script type="text/javascript" src='@routes.Assets.at("javascripts/bootstrap.min.js")'></script>
+    	<script type="text/javascript" src='@routes.Assets.at("javascripts/jQuery.js")'></script>
+    </head>
+    <body>
+    	<div id="header">
+    		@header()
+    	</div>
+    	<div id="content">
+    		<div style="clear: both"></div>
+	    	<div class="container">
+		        
+		        <div id="menu" style="margin-bottom: -10px;">
+			        @menu()
+		        </div>
+		        
+		        @content
+	    	</div>
+    	</div>
+    </body>
+</html>
